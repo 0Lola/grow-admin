@@ -23,7 +23,7 @@ const routes: Routes = [{
             path: 'create',
             component: FormCreateComponent,
         },
-        //default
+        // default
         {
             path: 'inputs',
             component: FormInputsComponent,
