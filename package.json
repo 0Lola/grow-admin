@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:zxa011023/grow-admin.git"
+    "url": "https://github.com/zxa011023/grow-admin.git"
   },
   "bugs": {
     "url": "https://github.com/akveo/ngx-admin/issues"
