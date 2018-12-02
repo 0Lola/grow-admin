@@ -15,7 +15,7 @@ import { StatusCardComponent } from '../dashboard/status-card/status-card.compon
     ThemeModule,
     FormsRoutingModule,
     ButtonsModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
   ],
   declarations: [
     ...routedComponents,

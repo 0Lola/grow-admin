@@ -41,7 +41,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         icon: 'nb-gear',
         link: '/pages/dashboard',
     },
-    
+
     // sample
     // {
     //     title: 'E-commerce',

@@ -66,5 +66,5 @@ export const routedComponents = [
     DatepickerComponent,
     // custom
     FormManagmentComponent,
-    FormCreateComponent
+    FormCreateComponent,
 ];

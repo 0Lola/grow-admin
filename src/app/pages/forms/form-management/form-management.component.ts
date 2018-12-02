@@ -15,7 +15,7 @@ export class FormManagmentComponent {
     settings = {
         hideSubHeader: true,
         actions: {
-            edit: false
+            edit: false,
         },
         delete: {
             deleteButtonContent: '<i class="nb-trash"></i>',
@@ -46,7 +46,7 @@ export class FormManagmentComponent {
                 title: 'E-mail',
                 type: 'string',
             },
-        }
+        },
     };
     source: LocalDataSource = new LocalDataSource();
 
@@ -67,6 +67,6 @@ export class FormManagmentComponent {
     }
     onUserRowSelect(event): void {
         // go to edit page
-        console.log(event)
+        console.log(event);
     }
 }
