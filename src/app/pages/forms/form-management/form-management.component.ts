@@ -67,6 +67,6 @@ export class FormManagmentComponent {
     }
     onUserRowSelect(event): void {
         // go to edit page
-        console.log(event);
+        // console.log(event);
     }
 }

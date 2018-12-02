@@ -7,8 +7,6 @@ import { ButtonsModule } from './buttons/buttons.module';
 // smart table
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { SmartTableService } from '../../@core/data/smart-table.service';
-import { StatusCardComponent } from '../dashboard/status-card/status-card.component';
-
 
 @NgModule({
   imports: [
