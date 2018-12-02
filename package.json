@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "license": "MIT",
   "repository": {
-    "type": "git",
+    "type": "https",
     "url": "https://github.com/zxa011023/grow-admin.git"
   },
   "bugs": {
