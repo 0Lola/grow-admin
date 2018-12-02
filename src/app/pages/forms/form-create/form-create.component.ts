@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Form } from './../../entity/form/form';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { Question } from '../../entity/form/question';
 
 @Component({
   selector: 'ngx-form-create',
@@ -6,8 +9,20 @@ import { Component } from '@angular/core';
   templateUrl: './form-create.component.html',
 })
 export class FormCreateComponent {
+    
+    form:Form = new Form;
+    questions = this.form.questions;
 
-  starRate = 2;
-  heartRate = 4;
-  radioGroupValue = 'This is value 2';
+    constructor(){
+
+    }
+
+    ngOnInit() {
+        this.questions.push(new Question);
+    }
+
+    newQuestion(){
+        this.questions.push(new Question);
+    }
+
 }
