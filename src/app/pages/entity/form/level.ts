@@ -1,4 +1,6 @@
 export class Level {
-    no: any;
     description: any;
+    constructor() {
+        this.description = '';
+    }
 }

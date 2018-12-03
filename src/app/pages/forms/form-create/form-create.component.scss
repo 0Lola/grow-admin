@@ -2,9 +2,15 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/breakpoints';
 @include nb-install-component() {
-    //custom
+    // custom
+    *:focus {
+        outline: none;
+    }
     .right {
         text-align: right;
+    }
+    .center {
+        text-align: center;
     }
     .btn-action {
         margin-right: 1%;
@@ -13,6 +19,19 @@
         background: #e7ebef;
         color: #181818;
     }
+    .margin {
+        margin-top: 1%;
+        margin-bottom: 3%;
+    }
+    .margin-bottom {
+        margin-bottom: 3%;
+    }
+    .margin-top {
+        margin-top: 3%;
+    }
+    .margin-right {
+        margin-right: 1%;
+    } // default
     nb-card-body {
         overflow: visible;
     }

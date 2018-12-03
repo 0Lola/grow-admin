@@ -7,5 +7,6 @@ export class Question {
     constructor() {
         this.name = '';
         this.description = '';
+        this.levels = Array(5).fill(new Level());
     }
 }

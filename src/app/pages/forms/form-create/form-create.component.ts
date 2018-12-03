@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { Form } from './../../entity/form/form';
 import { Question } from '../../entity/form/question';
@@ -9,16 +10,36 @@ import { Question } from '../../entity/form/question';
 })
 export class FormCreateComponent {
 
-    form: Form = new Form;
+    form: Form = new Form();
     questions = this.form.questions;
 
-    constructor() {
+    constructor(private router: Router) {
         this.questions.push(new Question);
-
     }
 
     newQuestion() {
         this.questions.push(new Question);
+    }
+
+    saveQuestion() {
+        // save
+    }
+
+    deleteQuestion() {
+        // delete
+    }
+
+    saveForm() {
+        // save form api
+        this.router.navigateByUrl('./form-management');
+    }
+    deleteForm() {
+        // delete form api
+        this.router.navigateByUrl('./form-management');
+    }
+
+    backToFormsList() {
+        this.router.navigateByUrl('./form-management');
     }
 
 }
