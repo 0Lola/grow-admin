@@ -9,7 +9,7 @@ const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [{
-    path: 'iot-dashboard',
+    path: 'dashboard',
     component: DashboardComponent,
   }, {
     path: 'ui-features',
@@ -43,7 +43,7 @@ const routes: Routes = [{
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
     path: '',
-    redirectTo: 'iot-dashboard',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
   }, {
     path: '**',
