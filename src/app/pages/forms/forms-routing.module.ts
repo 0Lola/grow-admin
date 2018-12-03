@@ -23,6 +23,10 @@ const routes: Routes = [{
             path: 'create',
             component: FormCreateComponent,
         },
+        {
+            path: 'edit/:id',
+            component: FormCreateComponent,
+        },
         // default
         {
             path: 'inputs',

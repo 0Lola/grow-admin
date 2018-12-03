@@ -1,6 +1,7 @@
 import { Level } from './level';
 
 export class Question {
+    ID: any;
     name: any;
     description: any;
     levels: Array<Level> = [];

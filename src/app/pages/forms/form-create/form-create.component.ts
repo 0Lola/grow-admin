@@ -10,15 +10,26 @@ import { Question } from '../../entity/form/question';
 })
 export class FormCreateComponent {
 
-    form: Form = new Form();
-    questions = this.form.questions;
+    formId: any;
+    form: Form;
 
     constructor(private router: Router) {
-        this.questions.push(new Question);
+        if (this.router.url.includes('create')) {
+            this.init();
+        } else if (this.router.url.includes('edit')) {
+            this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+            // get form by id api
+            this.init();
+        }
+    }
+
+    init() {
+        this.form = new Form();
+        this.form.questions.push(new Question());
     }
 
     newQuestion() {
-        this.questions.push(new Question);
+        this.form.questions.push(new Question());
     }
 
     saveQuestion() {
@@ -31,15 +42,18 @@ export class FormCreateComponent {
 
     saveForm() {
         // save form api
-        this.router.navigateByUrl('./form-management');
+        // this.router.navigateByUrl('/form-management');
+        window.location.href = `#/pages/forms/management`;
     }
     deleteForm() {
         // delete form api
-        this.router.navigateByUrl('./form-management');
+        // this.router.navigateByUrl('./form-management');
+        window.location.href = `#/pages/forms/management`;
     }
 
     backToFormsList() {
-        this.router.navigateByUrl('./form-management');
+        // this.router.navigateByUrl('./form-management');
+        window.location.href = `#/pages/forms/management`;
     }
 
 }

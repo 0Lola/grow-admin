@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableService } from '../../../@core/data/smart-table.service';
 
@@ -12,6 +11,7 @@ export class FormManagmentComponent {
 
     // smart table
     // ref: https://akveo.github.io/ng2-smart-table/#/documentation
+    source: LocalDataSource = new LocalDataSource();
     settings = {
         hideSubHeader: true,
         actions: {
@@ -48,25 +48,24 @@ export class FormManagmentComponent {
             },
         },
     };
-    source: LocalDataSource = new LocalDataSource();
+
 
     constructor(
         private smartTableService: SmartTableService,
     ) {
-        // smart table
         const data = this.smartTableService.getData();
         this.source.load(data);
     }
 
-    onDeleteConfirm(event): void {
+    deleteForm(event) {
         if (window.confirm('Are you sure you want to delete?')) {
             event.confirm.resolve();
         } else {
             event.confirm.reject();
         }
     }
-    onUserRowSelect(event): void {
-        // go to edit page
-        // console.log(event);
+    openEditForm(event) {
+        // this.router.navigateByUrl(`./edit/${event.data['id']}`);
+        window.location.href = `#/pages/forms/edit/${event.data['id']}`;
     }
 }
