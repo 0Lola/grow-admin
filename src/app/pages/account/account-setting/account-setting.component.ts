@@ -3,11 +3,11 @@ import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableService } from '../../../@core/data/smart-table.service';
 
 @Component({
-    selector: 'ngx-account-management',
-    styleUrls: ['./account-management.component.scss'],
-    templateUrl: './account-management.component.html',
+    selector: 'ngx-account-setting',
+    styleUrls: ['./account-setting.component.scss'],
+    templateUrl: './account-setting.component.html',
 })
-export class AccountManagmentComponent {
+export class AccountSettingComponent {
 
     // smart table
     // ref: https://akveo.github.io/ng2-smart-table/#/documentation
@@ -66,6 +66,6 @@ export class AccountManagmentComponent {
     }
     openEditUser(event) {
         // this.router.navigateByUrl(`./edit/${event.data['id']}`);
-        window.location.href = `#/pages/account/setting/${event.data['id']}`;
+        window.location.href = `#/pages/account/management`;
     }
 }

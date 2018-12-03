@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from './account.component';
 import { AccountManagmentComponent } from './account-management/account-management.component';
+import { AccountSettingComponent } from './account-setting/account-setting.component';
 
 const routes: Routes = [{
     path: '',
@@ -13,8 +14,8 @@ const routes: Routes = [{
             component: AccountManagmentComponent,
         },
         {
-            path: 'edit/:id',
-            component: AccountManagmentComponent,
+            path: 'setting/:id',
+            component: AccountSettingComponent,
         },
     ],
 }];
@@ -34,4 +35,5 @@ export class AccountRoutingModule {
 export const routedComponents = [
     AccountComponent,
     AccountManagmentComponent,
+    AccountSettingComponent,
 ];
