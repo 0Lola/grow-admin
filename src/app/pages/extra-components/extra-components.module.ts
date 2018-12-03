@@ -8,7 +8,6 @@ import { ExtraComponentsRoutingModule } from './extra-components-routing.module'
 
 // components
 import { ExtraComponentsComponent } from './extra-components.component';
-import { TreeComponent } from './tree/tree.component';
 import { SpinnerInTabsComponent } from './spinner/spinner-in-tabs/spinner-in-tabs.component';
 import { SpinnerInButtonsComponent } from './spinner/spinner-in-buttons/spinner-in-buttons.component';
 import { SpinnerSizesComponent } from './spinner/spinner-sizes/spinner-sizes.component';
@@ -19,7 +18,6 @@ import {
 } from './progress-bar/interactive-progress-bar/interactive-progress-bar.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AlertComponent } from './alert/alert.component';
-import { ChatComponent } from './chat/chat.component';
 import { Tab1Component, Tab2Component, TabsComponent } from './tabs/tabs.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DayCellComponent } from './calendar/day-cell/day-cell.component';
@@ -39,7 +37,6 @@ import { NewsService } from './services/news.service';
 
 const COMPONENTS = [
   ExtraComponentsComponent,
-  TreeComponent,
   AlertComponent,
   ProgressBarComponent,
   InteractiveProgressBarComponent,
@@ -50,7 +47,6 @@ const COMPONENTS = [
   SpinnerInTabsComponent,
   CalendarComponent,
   DayCellComponent,
-  ChatComponent,
   TabsComponent,
   Tab1Component,
   Tab2Component,
