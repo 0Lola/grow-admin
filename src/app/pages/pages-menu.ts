@@ -30,7 +30,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     {
         title: 'User Management',
         icon: 'nb-person',
-        link: '/pages/dashboard',
+        link: '/pages/account/management',
     },
     {
         title: 'Setting',
