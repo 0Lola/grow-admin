@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { FormsRoutingModule, routedComponents } from '../forms/forms-routing.module';
+import { AccountRoutingModule, routedComponents } from './account-routing.module';
 import { ButtonsModule } from '../bootstrap/buttons/buttons.module';
 
 // smart table
@@ -11,7 +11,7 @@ import { SmartTableService } from '../../@core/data/smart-table.service';
 @NgModule({
   imports: [
     ThemeModule,
-    FormsRoutingModule,
+    AccountRoutingModule,
     ButtonsModule,
     Ng2SmartTableModule,
   ],

@@ -39,7 +39,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     {
         title: 'Admin Setting',
         icon: 'nb-gear',
-        link: '/pages/dashboard',
+        link: '/pages/forms/layouts',
     },
 
 ];

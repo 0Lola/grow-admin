@@ -27,7 +27,7 @@ const routes: Routes = [{
         RouterModule,
     ],
 })
-export class FormsRoutingModule {
+export class AccountRoutingModule {
 
 }
 
