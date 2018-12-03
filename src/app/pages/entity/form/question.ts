@@ -4,7 +4,7 @@ export class Question {
     name: any;
     description: any;
     levels: Array<Level> = [];
-    constructor(){
+    constructor() {
         this.name = '';
         this.description = '';
     }
