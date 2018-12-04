@@ -1,28 +1,42 @@
+<!-- card -->
 <div class="row">
-    <div class="col-xxxl-6 col-md-12" *ngFor="let card of cards">
-        <nb-card class="card" (click)="on = false">
+    <div class="col-xxxl-6 col-md-12">
+        <nb-card class="card">
             <div class="icon-container">
-                <div class="icon {{ card.type }}">
-                    <i [ngClass]="card.iconClass"></i>
+                <div class="icon primary">
+                    <i class="nb-compose"></i>
                 </div>
             </div>
             <div class="details">
-                <div class="title">{{ card.title }}</div>
-                <div class="status">{{ card.value }}</div>
+                <div class="title">Respondent</div>
+                <div class="status">{{ respondentNumber }}</div>
+            </div>
+        </nb-card>
+    </div>
+    <div class="col-xxxl-6 col-md-12">
+        <nb-card class="card">
+            <div class="icon-container">
+                <div class="icon danger">
+                    <i class="nb-lightbulb"></i>
+                </div>
+            </div>
+            <div class="details">
+                <div class="title">Question</div>
+                <div class="status">{{ questionNumber }}</div>
             </div>
         </nb-card>
     </div>
 </div>
 
-
+<!-- form information -->
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-md-12">
         <nb-card>
             <nb-card-header>
                 Form Information
             </nb-card-header>
             <nb-card-body>
-                <!-- <div class="font-row font-main"> -->
+                <div class="font-row font-main">
                     <div class="header">
                         <div class="name bold">Form Name</div>
                         <div class="variants">
@@ -36,17 +50,23 @@
                         Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
                         ocean.
                     </p>
-                <!-- </div> -->
+                </div>
             </nb-card-body>
         </nb-card>
     </div>
-    <div class="col-md-6 col-xxl-6">
-        <nb-card size="small" class="headings-card">
-            <nb-card-header>
-                Headings
-            </nb-card-header>
-            <nb-card-body>
-            </nb-card-body>
+</div>
+
+<div class="lists row">
+    <!-- Respondent -->
+    <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <nb-card class="list-card">
+            <nb-card-header>Respondent</nb-card-header>
+            <nb-list>
+                <nb-list-item *ngFor="let user of users">
+                    <nb-user [name]="user.name" [title]="user.title">
+                    </nb-user>
+                </nb-list-item>
+            </nb-list>
         </nb-card>
     </div>
 </div>

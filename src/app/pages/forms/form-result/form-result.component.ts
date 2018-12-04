@@ -3,13 +3,6 @@ import { Component } from '@angular/core';
 
 // form
 import { Form } from './../../entity/form/form';
-import { Question } from '../../entity/form/question';
-
-// card
-import { NbThemeService } from '@nebular/theme';
-import { takeWhile } from 'rxjs/operators';
-import { Card } from '../../entity/card';
-
 
 @Component({
     selector: 'ngx-form-result',
@@ -23,59 +16,38 @@ export class FormResultComponent {
     form: Form;
 
     // card
-    numberCard: Card;
-    questionCard: Card;
-    commonStatusCardsSet: Card[];
-    cards: string;
-    cardsTheme: { corporate: Card[] };
+    respondentNumber: any;
+    questionNumber: any;
 
-    constructor(
-        private router: Router,
-        private themeService: NbThemeService) {
+    // respondent
+    users: { name: string, title: string }[] = [
+        { name: 'Carla Espinosa', title: 'Nurse' },
+        { name: 'Bob Kelso', title: 'Doctor of Medicine' },
+        { name: 'Janitor', title: 'Janitor' },
+        { name: 'Perry Cox', title: 'Doctor of Medicine' },
+        { name: 'Ben Sullivan', title: 'Carpenter and photographer' },
+    ];
 
-        // card
-        this.initCard();
-        this.themeService.getJsTheme()
-            .pipe(takeWhile(() => true))
-            .subscribe(theme => {
-                this.cards = this.cardsTheme[theme.name];
-            });
-
-        // form
-        // api: getResultFormById
+    constructor(private router: Router) {
         this.resultFormId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
-        this.initForm();
-
-
     }
 
-    initForm() {
-        this.form = new Form();
-        this.form.questions.push(new Question());
+    // tslint:disable-next-line:use-life-cycle-interface
+    ngOnInit(): void {
+        this.getResultFormById();
     }
 
-    initCard() {
-        this.numberCard = new Card('Respondent', 'nb-compose', 'primary', '123');
-        this.questionCard = new Card('Question', 'nb-lightbulb', 'danger', '123');
-        this.commonStatusCardsSet = [
-            this.numberCard,
-            this.questionCard,
-        ];
-        this.cardsTheme = {
-            corporate: [
-                {
-                    ...this.numberCard,
-                },
-                {
-                    ...this.questionCard,
-                },
-            ],
-        };
+    getResultFormById() {
+        // api: getResultFormById
+        this.setCard();
+    }
 
+    setCard() {
+        this.respondentNumber = 0;
+        this.questionNumber = 0;
     }
 
     redirectToFormsManagement() {
         window.location.href = `#/pages/forms/management`;
     }
-
 }
