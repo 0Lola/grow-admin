@@ -6,8 +6,6 @@ import { AlertComponent } from './alert/alert.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { Tab1Component, Tab2Component, TabsComponent } from './tabs/tabs.component';
-import { AccordionComponent } from './accordion/accordion.component';
 import { NebularFormInputsComponent } from './form-inputs/nebular-form-inputs.component';
 import { InfiniteListComponent } from './infinite-list/infinite-list.component';
 import { ListComponent } from './list/list.component';
@@ -39,10 +37,6 @@ const routes: Routes = [{
       component: NebularFormInputsComponent,
     },
     {
-      path: 'accordion',
-      component: AccordionComponent,
-    },
-    {
       path: 'progress-bar',
       component: ProgressBarComponent,
     },
@@ -53,25 +47,6 @@ const routes: Routes = [{
     {
       path: 'alert',
       component: AlertComponent,
-    },
-    {
-      path: 'tabs',
-      component: TabsComponent,
-      children: [
-        {
-          path: '',
-          redirectTo: 'tab1',
-          pathMatch: 'full',
-        },
-        {
-          path: 'tab1',
-          component: Tab1Component,
-        },
-        {
-          path: 'tab2',
-          component: Tab2Component,
-        },
-      ],
     },
     {
       path: 'calendar-kit',
