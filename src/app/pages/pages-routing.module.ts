@@ -15,26 +15,8 @@ const routes: Routes = [{
     path: 'account',
     loadChildren: './account/account.module#AccountModule',
   }, {
-    path: 'modal-overlays',
-    loadChildren: './modal-overlays/modal-overlays.module#ModalOverlaysModule',
-  }, {
-    path: 'extra-components',
-    loadChildren: './extra-components/extra-components.module#ExtraComponentsModule',
-  }, {
-    path: 'bootstrap',
-    loadChildren: './bootstrap/bootstrap.module#BootstrapModule',
-  }, {
-    path: 'charts',
-    loadChildren: './charts/charts.module#ChartsModule',
-  }, {
     path: 'forms',
     loadChildren: './forms/forms.module#FormsModule',
-  }, {
-    path: 'tables',
-    loadChildren: './tables/tables.module#TablesModule',
-  }, {
-    path: 'miscellaneous',
-    loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
     path: '',
     redirectTo: 'dashboard',

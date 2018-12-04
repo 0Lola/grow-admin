@@ -2,31 +2,35 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FormsComponent } from './forms.component';
-// custom
 import { FormManagmentComponent } from './form-management/form-management.component';
 import { FormCreateComponent } from './form-create/form-create.component';
 import { FormResultComponent } from './form-result/form-result.component';
+import { FormResultViewComponent } from './form-result-view.component.ts/form-result-view.component';
 
 const routes: Routes = [{
     path: '',
     component: FormsComponent,
     children: [
-        // custom
         {
             path: 'management',
             component: FormManagmentComponent,
         },
+
         {
             path: 'create',
             component: FormCreateComponent,
         },
         {
-            path: 'edit/:id',
+            path: 'create/:id',
             component: FormCreateComponent,
         },
         {
-            path: 'result/:id',
+            path: 'result',
             component: FormResultComponent,
+        },
+        {
+            path: 'result/:id',
+            component: FormResultViewComponent,
         },
     ],
 }];
@@ -44,10 +48,9 @@ export class FormsRoutingModule {
 }
 
 export const routedComponents = [
-    // default
     FormsComponent,
-    // custom
     FormManagmentComponent,
     FormCreateComponent,
     FormResultComponent,
+    FormResultViewComponent,
 ];

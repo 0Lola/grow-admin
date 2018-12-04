@@ -1,8 +1,6 @@
-import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-
-// form
-import { Form } from './../../entity/form/form';
+import { LocalDataSource } from 'ng2-smart-table';
+import { SmartTableService } from '../../../@core/data/smart-table.service';
 
 @Component({
     selector: 'ngx-form-result',
@@ -11,43 +9,47 @@ import { Form } from './../../entity/form/form';
 })
 export class FormResultComponent {
 
-    // form
-    resultFormId: any;
-    form: Form;
+    // ref: https://akveo.github.io/ng2-smart-table/#/documentation
+    resultForms: LocalDataSource = new LocalDataSource();
+    resultFormsSettings = {
+        hideSubHeader: true,
+        actions: false,
+        columns: {
+            id: {
+                title: 'ID',
+                type: 'number',
+            },
+            firstName: {
+                title: 'Form Name',
+                type: 'string',
+            },
+            lastName: {
+                title: ' Type',
+                type: 'string',
+            },
+            username: {
+                title: 'Numbers',
+                type: 'number',
+            },
+            email: {
+                title: 'Creator',
+                type: 'string',
+            },
+            age: {
+                title: 'E-mail',
+                type: 'string',
+            },
+        },
+    };
 
-    // card
-    respondentNumber: any;
-    questionNumber: any;
-
-    // respondent
-    users: { name: string, title: string }[] = [
-        { name: 'Carla Espinosa', title: 'Nurse' },
-        { name: 'Bob Kelso', title: 'Doctor of Medicine' },
-        { name: 'Janitor', title: 'Janitor' },
-        { name: 'Perry Cox', title: 'Doctor of Medicine' },
-        { name: 'Ben Sullivan', title: 'Carpenter and photographer' },
-    ];
-
-    constructor(private router: Router) {
-        this.resultFormId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+    constructor(
+        private smartTableService: SmartTableService,
+    ) {
+        const data = this.smartTableService.getData();
+        this.resultForms.load(data);
     }
 
-    // tslint:disable-next-line:use-life-cycle-interface
-    ngOnInit(): void {
-        this.getResultFormById();
-    }
-
-    getResultFormById() {
-        // api: getResultFormById
-        this.setCard();
-    }
-
-    setCard() {
-        this.respondentNumber = 0;
-        this.questionNumber = 0;
-    }
-
-    redirectToFormsManagement() {
-        window.location.href = `#/pages/forms/management`;
+    resultForm(event) {
+        window.location.href = `#/pages/forms/result/${event.data['id']}`;
     }
 }

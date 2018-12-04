@@ -1,20 +1,19 @@
-<nb-card>
-    <nb-card-header>
-        Form Management
-    </nb-card-header>
+<h1 class="title">
+    Forms management
+</h1>
 
-    <nb-card-body>
-        <ng2-smart-table [settings]="formsSettings" [source]="forms" (deleteConfirm)="deleteForm($event)" (userRowSelect)="openForm($event)">
-        </ng2-smart-table>
-    </nb-card-body>
-</nb-card>
-
-<nb-card>
-    <nb-card-header>
-        Form Result
-    </nb-card-header>
-    <nb-card-body>
-        <ng2-smart-table [settings]="resultFormsSettings" [source]="resultForms" (userRowSelect)="openResultForm($event)">
-        </ng2-smart-table>
-    </nb-card-body>
-</nb-card>
+<div class="row">
+    <div class="col-md-6 col-lg-6 col-xxxl-6" *ngFor="let item of  [0,1,2,3,4]; let i=index">
+        <nb-card size="small">
+            <nb-card-header>Form Name</nb-card-header>
+            <nb-card-body>
+                Form Description
+            </nb-card-body>
+            <nb-card-footer class="right">
+                <button class="btn-action" nbButton hero status="primary" (click)="editForm(i)">Edit</button>
+                <button class="btn-action" nbButton hero status="success" (click)="viewResult(i)">View Result</button>
+                <button class="btn-action" nbButton hero status="danger" (click)="deleteForm(i)">Delete</button>
+            </nb-card-footer>
+        </nb-card>
+    </div>
+</div>

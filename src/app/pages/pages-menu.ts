@@ -19,6 +19,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/forms/management',
     },
     {
+        title: 'Forms Result',
+        icon: 'nb-bar-chart',
+        link: '/pages/forms/result',
+    },
+    {
         title: 'Create Forms',
         icon: 'nb-compose',
         link: '/pages/forms/create',
@@ -28,18 +33,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
         group: true,
     },
     {
-        title: 'User Management',
+        title: 'Account Management',
         icon: 'nb-person',
         link: '/pages/account/management',
     },
     {
         title: 'Setting',
-        group: true,
-    },
-    {
-        title: 'Admin Setting',
         icon: 'nb-gear',
         link: '/pages/forms/layouts',
     },
-
 ];
