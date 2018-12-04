@@ -1,12 +1,15 @@
 @import '../../../@theme/styles/themes';
+/* stylelint-disable */
 :host /deep/ tbody>tr>td {
     cursor: pointer;
 }
+
 .margin {
     margin-top: 1%;
     margin-bottom: 3%;
 }
-.title{
+
+.title {
     border-bottom: 1px solid #cdd5dc;
     padding-bottom: 1%;
 }
