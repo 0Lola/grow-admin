@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableService } from '../../../@core/data/smart-table.service';
+import swal from 'sweetalert2';
 
 @Component({
     selector: 'ngx-form-management',
@@ -58,12 +59,21 @@ export class FormManagmentComponent {
     }
 
     deleteForm(event) {
-        if (window.confirm('Are you sure you want to delete?')) {
-            event.confirm.resolve();
-        } else {
-            event.confirm.reject();
-        }
+        swal({
+            title: 'Are you sure?',
+            text: `Delete Form ${event.data['id']}`,
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Delete',
+        }).then((result) => {
+            if (result.value) {
+                // api: deleteFormById
+            }
+        });
     }
+
     openEditForm(event) {
         // this.router.navigateByUrl(`./edit/${event.data['id']}`);
         window.location.href = `#/pages/forms/edit/${event.data['id']}`;

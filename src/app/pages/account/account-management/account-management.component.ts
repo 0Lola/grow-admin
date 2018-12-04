@@ -65,7 +65,6 @@ export class AccountManagmentComponent {
         }
     }
     openEditUser(event) {
-        // this.router.navigateByUrl(`./edit/${event.data['id']}`);
         window.location.href = `#/pages/account/setting/${event.data['id']}`;
     }
 }

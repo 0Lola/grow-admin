@@ -1,7 +1,8 @@
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { Component } from '@angular/core';
 import { Form } from './../../entity/form/form';
 import { Question } from '../../entity/form/question';
+import swal from 'sweetalert2';
 
 @Component({
     selector: 'ngx-form-create',
@@ -14,13 +15,17 @@ export class FormCreateComponent {
     form: Form;
 
     constructor(private router: Router) {
-        if (this.router.url.includes('create')) {
-            this.init();
-        } else if (this.router.url.includes('edit')) {
-            this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
-            // get form by id api
-            this.init();
-        }
+        this.router.events.subscribe((val) => {
+            if (val instanceof NavigationEnd) {
+                if (this.router.url.includes('create')) {
+                    this.init();
+                } else if (this.router.url.includes('edit')) {
+                    this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+                    // api: getFormById
+                    this.init();
+                }
+            }
+        });
     }
 
     init() {
@@ -32,27 +37,45 @@ export class FormCreateComponent {
         this.form.questions.push(new Question());
     }
 
-    saveQuestion() {
-        // save
-    }
-
-    deleteQuestion() {
-        // delete
+    deleteQuestion(index) {
+        swal({
+            title: 'Are you sure?',
+            text: `Delete Question ${index + 1}`,
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Delete',
+        }).then((result) => {
+            if (result.value) {
+                this.form.questions.splice(index, 1);
+            }
+        });
     }
 
     saveForm() {
-        // save form api
-        // this.router.navigateByUrl('/form-management');
-        window.location.href = `#/pages/forms/management`;
-    }
-    deleteForm() {
-        // delete form api
-        // this.router.navigateByUrl('./form-management');
-        window.location.href = `#/pages/forms/management`;
+        // api: saveForm
+        this.redirectToFormsManagement();
     }
 
-    backToFormsList() {
-        // this.router.navigateByUrl('./form-management');
+    deleteForm() {
+        swal({
+            title: 'Are you sure?',
+            text: `Delete Form`,
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Delete',
+        }).then((result) => {
+            if (result.value) {
+                // api: deleteFormById
+                this.redirectToFormsManagement();
+            }
+        });
+    }
+
+    redirectToFormsManagement() {
         window.location.href = `#/pages/forms/management`;
     }
 
