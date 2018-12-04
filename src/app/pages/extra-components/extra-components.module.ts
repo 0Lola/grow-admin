@@ -9,30 +9,19 @@ import { ExtraComponentsComponent } from './extra-components.component';
 // service
 import { NewsService } from './services/news.service';
 
-const COMPONENTS = [
-  ExtraComponentsComponent,
-];
-
-const SERVICES = [
-  NewsService,
-];
-
-const MODULES = [
-  ThemeModule,
-  ExtraComponentsRoutingModule,
-  TreeModule,
-  ToasterModule.forRoot(),
-];
 
 @NgModule({
   imports: [
-    ...MODULES,
+    ThemeModule,
+    ExtraComponentsRoutingModule,
+    TreeModule,
+    ToasterModule.forRoot(),
   ],
   declarations: [
-    ...COMPONENTS,
+    ExtraComponentsComponent,
   ],
   providers: [
-    ...SERVICES,
+    NewsService,
   ],
 })
 export class ExtraComponentsModule { }
