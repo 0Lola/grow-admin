@@ -24,9 +24,6 @@ const routes: Routes = [{
     path: 'bootstrap',
     loadChildren: './bootstrap/bootstrap.module#BootstrapModule',
   }, {
-    path: 'maps',
-    loadChildren: './maps/maps.module#MapsModule',
-  }, {
     path: 'charts',
     loadChildren: './charts/charts.module#ChartsModule',
   }, {

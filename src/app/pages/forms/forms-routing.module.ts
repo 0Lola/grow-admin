@@ -5,6 +5,7 @@ import { FormsComponent } from './forms.component';
 // custom
 import { FormManagmentComponent } from './form-management/form-management.component';
 import { FormCreateComponent } from './form-create/form-create.component';
+import { FormResultComponent } from './form-result/form-result.component';
 
 const routes: Routes = [{
     path: '',
@@ -22,6 +23,10 @@ const routes: Routes = [{
         {
             path: 'edit/:id',
             component: FormCreateComponent,
+        },
+        {
+            path: 'result/:id',
+            component: FormResultComponent,
         },
     ],
 }];
@@ -44,4 +49,5 @@ export const routedComponents = [
     // custom
     FormManagmentComponent,
     FormCreateComponent,
+    FormResultComponent,
 ];

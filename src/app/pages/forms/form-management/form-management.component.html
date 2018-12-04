@@ -1,12 +1,20 @@
 <nb-card>
     <nb-card-header>
-        Form List
-        <nb-alert outline="disabled">You can manaement your forms in the table!</nb-alert>
+        Form Management
     </nb-card-header>
 
     <nb-card-body>
-        <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="deleteForm($event)"
-            (userRowSelect)="openEditForm($event)">
+        <ng2-smart-table [settings]="formsSettings" [source]="forms" (deleteConfirm)="deleteForm($event)" (userRowSelect)="openForm($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>
+
+<nb-card>
+    <nb-card-header>
+        Form Result
+    </nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="resultFormsSettings" [source]="resultForms" (userRowSelect)="openResultForm($event)">
         </ng2-smart-table>
     </nb-card-body>
 </nb-card>
