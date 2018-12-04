@@ -1,7 +1,12 @@
 @import '../../../@theme/styles/themes';
 /* stylelint-disable */
+
 :host /deep/ tbody>tr>td {
     cursor: pointer;
+}
+
+*:focus {
+    outline: none;
 }
 
 .right {

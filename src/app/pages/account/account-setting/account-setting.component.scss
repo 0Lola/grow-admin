@@ -1,35 +1,49 @@
-
 /* stylelint-disable */
+
 :host /deep/ tbody>tr>td {
     cursor: pointer;
 }
+
 // custom
 *:focus {
     outline: none;
 }
+
 .right {
     text-align: right;
 }
+
 .center {
     text-align: center;
 }
+
 .btn-action {
     margin-right: 1%;
 }
+
 .btn-default {
     background: #e7ebef;
     color: #181818;
 }
+
 .margin {
     margin-top: 1%;
     margin-bottom: 3%;
 }
+
 .margin-bottom {
     margin-bottom: 3%;
 }
+
 .margin-top {
     margin-top: 3%;
 }
+
 .margin-right {
     margin-right: 1%;
-} 
+}
+
+.title {
+    border-bottom: 1px solid #cdd5dc;
+    padding-bottom: 1%;
+}

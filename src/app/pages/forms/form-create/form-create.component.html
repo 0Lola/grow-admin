@@ -1,3 +1,6 @@
+<h1 class="title">
+    Forms Create
+</h1>
 <div class="row">
     <div class="col-lg-12">
         <div class="container-btn right margin">
@@ -13,9 +16,9 @@
                 <div class="input-group">
                     <input type="text" nbInput fullWidth placeholder="Form Name" [value]="form?.name">
                 </div>
-                    <div class="input-group">
-                        <textarea rows="5" nbInput fullWidth placeholder="Description" [value]="form?.description"></textarea>
-                    </div>
+                <div class="input-group">
+                    <textarea rows="5" nbInput fullWidth placeholder="Description" [value]="form?.description"></textarea>
+                </div>
             </nb-card-body>
         </nb-card>
     </div>
@@ -29,57 +32,57 @@
                 <div class="input-group">
                     <input type="text" nbInput fullWidth placeholder="Question Name" [value]="question.name">
                 </div>
-                    <div class="input-group">
-                        <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.description"></textarea>
-                    </div>
-                    <h5 class="margin">Level Definition</h5>
-                    <nb-stepper orientation="horizontal">
-                        <nb-step [label]="level1">
-                            <ng-template #level1>Level 1</ng-template>
-                            <div class="input-group">
-                                <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.levels[0].description"></textarea>
-                            </div>
-                            <div class="center">
-                                <button class="btn-default margin-right" nbButton disabled nbStepperPrevious size="xsmall"
-                                    shape="round">&lt;</button>
-                                <button class="btn-default" nbButton nbStepperNext size="xsmall" shape="round">&gt;</button>
-                            </div>
-                        </nb-step>
-                        <nb-step [label]="level2">
-                            <ng-template #level2>Level 2</ng-template>
-                            <div class="input-group">
-                                <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.levels[1].description"></textarea>
-                            </div>
-                            <div class="center">
-                                <button class="btn-default margin-right" nbButton nbStepperPrevious size="xsmall" shape="round">&lt;</button>
-                                <button class="btn-default" nbButton nbStepperNext size="xsmall" shape="round">&gt;</button>
-                            </div>
-                        </nb-step>
-                        <nb-step [label]="level3">
-                            <ng-template #level3>Level 3</ng-template>
-                            <div class="input-group">
-                                <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.levels[2].description"></textarea>
-                            </div>
-                            <div class="center">
-                                <button class="btn-default margin-right" nbButton nbStepperPrevious size="xsmall" shape="round">&lt;</button>
-                                <button class="btn-default" nbButton nbStepperNext size="xsmall" shape="round">&gt;</button>
-                            </div>
-                        </nb-step>
-                        <nb-step [label]="level4">
-                            <ng-template #level4>Level 4</ng-template>
-                            <div class="input-group">
-                                <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.levels[3].description"></textarea>
-                            </div>
-                            <div class="center">
-                                <button class="btn-default margin-right" nbButton nbStepperPrevious size="xsmall" shape="round">&lt;</button>
-                                <button class="btn-default" nbButton disabled nbStepperNext size="xsmall" shape="round">&gt;</button>
-                            </div>
-                        </nb-step>
-                    </nb-stepper>
-                    <hr>
-                    <div class="container-btn right">
-                        <button *ngIf="form.questions.length > 1" type="button" class="btn btn-default" (click)="deleteQuestion(i)">DELETE</button>
-                    </div>
+                <div class="input-group">
+                    <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.description"></textarea>
+                </div>
+                <h5 class="margin">Level Definition</h5>
+                <nb-stepper orientation="horizontal">
+                    <nb-step [label]="level1">
+                        <ng-template #level1>Level 1</ng-template>
+                        <div class="input-group">
+                            <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.levels[0].description"></textarea>
+                        </div>
+                        <div class="center">
+                            <button class="btn-default margin-right" nbButton disabled nbStepperPrevious size="xsmall"
+                                shape="round">&lt;</button>
+                            <button class="btn-default" nbButton nbStepperNext size="xsmall" shape="round">&gt;</button>
+                        </div>
+                    </nb-step>
+                    <nb-step [label]="level2">
+                        <ng-template #level2>Level 2</ng-template>
+                        <div class="input-group">
+                            <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.levels[1].description"></textarea>
+                        </div>
+                        <div class="center">
+                            <button class="btn-default margin-right" nbButton nbStepperPrevious size="xsmall" shape="round">&lt;</button>
+                            <button class="btn-default" nbButton nbStepperNext size="xsmall" shape="round">&gt;</button>
+                        </div>
+                    </nb-step>
+                    <nb-step [label]="level3">
+                        <ng-template #level3>Level 3</ng-template>
+                        <div class="input-group">
+                            <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.levels[2].description"></textarea>
+                        </div>
+                        <div class="center">
+                            <button class="btn-default margin-right" nbButton nbStepperPrevious size="xsmall" shape="round">&lt;</button>
+                            <button class="btn-default" nbButton nbStepperNext size="xsmall" shape="round">&gt;</button>
+                        </div>
+                    </nb-step>
+                    <nb-step [label]="level4">
+                        <ng-template #level4>Level 4</ng-template>
+                        <div class="input-group">
+                            <textarea rows="5" nbInput fullWidth placeholder="Question Description" [value]="question.levels[3].description"></textarea>
+                        </div>
+                        <div class="center">
+                            <button class="btn-default margin-right" nbButton nbStepperPrevious size="xsmall" shape="round">&lt;</button>
+                            <button class="btn-default" nbButton disabled nbStepperNext size="xsmall" shape="round">&gt;</button>
+                        </div>
+                    </nb-step>
+                </nb-stepper>
+                <hr>
+                <div class="container-btn right">
+                    <button *ngIf="form.questions.length > 1" type="button" class="btn btn-default" (click)="deleteQuestion(i)">DELETE</button>
+                </div>
             </nb-card-body>
         </nb-card>
     </div>

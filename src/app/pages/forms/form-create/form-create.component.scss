@@ -31,7 +31,12 @@
     }
     .margin-right {
         margin-right: 1%;
-    } // default
+    } 
+    .title {
+        border-bottom: 1px solid #cdd5dc;
+        padding-bottom: 1%;
+    }
+    // default
     nb-card-body {
         overflow: visible;
     }

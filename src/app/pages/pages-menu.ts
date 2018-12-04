@@ -1,10 +1,8 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
-
-    // custom
     {
-        title: 'IoT Dashboard',
+        title: 'Dashboard',
         icon: 'nb-home',
         link: '/pages/dashboard',
         home: true,
@@ -29,17 +27,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/forms/create',
     },
     {
-        title: 'Account',
+        title: 'Setting',
         group: true,
     },
     {
         title: 'Account Management',
         icon: 'nb-person',
         link: '/pages/account/management',
-    },
-    {
-        title: 'Setting',
-        icon: 'nb-gear',
-        link: '/pages/forms/layouts',
     },
 ];

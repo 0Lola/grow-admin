@@ -4,6 +4,9 @@
 @import '~@nebular/bootstrap/styles/hero-buttons';
 @include nb-install-component() {
     // custom
+    *:focus {
+        outline: none;
+    }
     .margin {
         margin-top: 1%;
         margin-bottom: 3%;
