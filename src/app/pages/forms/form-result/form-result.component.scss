@@ -2,7 +2,6 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/breakpoints';
 @import '~@nebular/bootstrap/styles/hero-buttons';
-
 @include nb-install-component() {
     // card
     .solar-card nb-card-header {
@@ -14,7 +13,7 @@
             display: none;
         }
     }
-    .card{
+    .card {
         flex-direction: row;
         align-items: center;
         height: 6rem;
