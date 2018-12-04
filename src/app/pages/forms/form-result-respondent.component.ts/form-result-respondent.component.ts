@@ -28,7 +28,7 @@ export class FormResultRespondentComponent {
     constructor(
         private router: Router,
     ) {
-        // this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+        this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
     }
 
     // tslint:disable-next-line:use-life-cycle-interface
