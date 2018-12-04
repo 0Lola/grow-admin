@@ -1,15 +1,13 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-
-// form
-import { Form } from './../../entity/form/form';
+import { Form } from '../../entity/form/form';
 
 @Component({
-    styleUrls: ['./form-result-view.component.scss'],
-    selector: 'ngx-form-result-view',
-    templateUrl: './form-result-view.component.html',
+    styleUrls: ['./form-result-respondent.component.scss'],
+    selector: 'ngx-form-result-respondent',
+    templateUrl: './form-result-respondent.component.html',
 })
-export class FormResultViewComponent {
+export class FormResultRespondentComponent {
 
     formId: any;
     form: Form;
@@ -25,8 +23,12 @@ export class FormResultViewComponent {
         { name: 'Ben Sullivan', title: 'Carpenter and photographer' },
     ];
 
-    constructor(private router: Router) {
-        this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+    activeModal: any;
+
+    constructor(
+        private router: Router,
+    ) {
+        // this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
     }
 
     // tslint:disable-next-line:use-life-cycle-interface
@@ -47,9 +49,7 @@ export class FormResultViewComponent {
     redirectToFormsManagement() {
         window.location.href = `#/pages/forms/management`;
     }
-    viewRespond(respondentId) {
-        // api : get Respondent Result by formId and respondentId
-        window.location.href = `#/pages/forms/respondent/${this.formId}/${respondentId}`;
 
+    showModal(respondentId) {
     }
 }

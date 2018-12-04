@@ -6,6 +6,7 @@ import { FormManagmentComponent } from './form-management/form-management.compon
 import { FormCreateComponent } from './form-create/form-create.component';
 import { FormResultComponent } from './form-result/form-result.component';
 import { FormResultViewComponent } from './form-result-view.component.ts/form-result-view.component';
+import { FormResultRespondentComponent } from './form-result-respondent.component.ts/form-result-respondent.component';
 
 const routes: Routes = [{
     path: '',
@@ -32,6 +33,10 @@ const routes: Routes = [{
             path: 'result/:id',
             component: FormResultViewComponent,
         },
+        {
+            path: 'respondent/:id/:respondentId',
+            component: FormResultRespondentComponent,
+        },
     ],
 }];
 
@@ -53,4 +58,5 @@ export const routedComponents = [
     FormCreateComponent,
     FormResultComponent,
     FormResultViewComponent,
+    FormResultRespondentComponent,
 ];

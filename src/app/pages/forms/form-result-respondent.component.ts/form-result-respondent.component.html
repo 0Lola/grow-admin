@@ -6,6 +6,34 @@
     </div>
 </div>
 
+<!-- form information -->
+<div class="row">
+    <div class="col-md-12">
+        <nb-card>
+            <nb-card-header>
+                Form Result
+            </nb-card-header>
+            <nb-card-body>
+                <div class="font-row font-main">
+                    <div class="header">
+                        <div class="name bold">Form Name</div>
+                        <div class="variants">
+                            <span class="detail font-w-light">#No.</span>
+                        </div>
+                    </div>
+                    <p>
+                        Form Description : Far far away, behind the word mountains, far from the countries Vokalia
+                        and
+                        Consonantia,
+                        there live the blind texts.
+                        Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+                        ocean.
+                    </p>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
 <!-- card -->
 <div class="row">
     <div class="col-xxxl-6 col-md-12">
@@ -35,43 +63,14 @@
         </nb-card>
     </div>
 </div>
-
-<!-- form information -->
-<div class="row">
-    <div class="col-md-12">
-        <nb-card>
-            <nb-card-header>
-                Form Information
-            </nb-card-header>
-            <nb-card-body>
-                <div class="font-row font-main">
-                    <div class="header">
-                        <div class="name bold">Form Name</div>
-                        <div class="variants">
-                            <span class="detail font-w-light">#No.</span>
-                        </div>
-                    </div>
-                    <p>
-                        Form Description : Far far away, behind the word mountains, far from the countries Vokalia
-                        and
-                        Consonantia,
-                        there live the blind texts.
-                        Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-                        ocean.
-                    </p>
-                </div>
-            </nb-card-body>
-        </nb-card>
-    </div>
-</div>
-
 <div class="lists row">
     <!-- Respondent -->
     <div class="col-md-12 col-lg-6 col-xxxl-6">
         <nb-card size="medium">
             <nb-card-header>Respondent</nb-card-header>
             <nb-list class="respondent">
-                <nb-list-item *ngFor="let user of users;let i = index" nbTooltip="view detail" nbTooltipPlacement="top" (click)="viewRespond(i)">
+                <nb-list-item *ngFor="let user of users; let i=index" nbTooltip="view detail" nbTooltipPlacement="top"
+                    (click)="showModal(modal,i)">
                     <nb-user [name]="user.name" [title]="user.title">
                     </nb-user>
                 </nb-list-item>
