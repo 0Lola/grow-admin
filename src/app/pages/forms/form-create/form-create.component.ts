@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Form } from './../../entity/form/form';
 import { Question } from '../../entity/form/question';
 import swal from 'sweetalert2';
+import { calcPossibleSecurityContexts } from '@angular/compiler/src/template_parser/binding_parser';
 
 @Component({
     selector: 'ngx-form-create',
@@ -11,18 +12,21 @@ import swal from 'sweetalert2';
 })
 export class FormCreateComponent {
 
+    mode: string;
     formId: any;
     form: Form;
 
     constructor(private router: Router) {
         this.router.events.subscribe((val) => {
             if (val instanceof NavigationEnd) {
-                if (this.router.url.includes('create')) {
+                this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+                if (this.formId === 'create') {
                     this.init();
-                } else if (this.router.url.includes('edit')) {
-                    this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+                    this.mode = 'Create';
+                } else {
                     // api: getFormById
                     this.init();
+                    this.mode = 'Edit';
                 }
             }
         });

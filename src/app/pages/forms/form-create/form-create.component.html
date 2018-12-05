@@ -1,11 +1,12 @@
 <h1 class="title">
-    Forms Create
+    Forms {{ mode }}
 </h1>
 <div class="row">
     <div class="col-lg-12">
         <div class="container-btn right margin">
             <button class="btn-action" nbButton hero status="primary" (click)="saveForm()">Save the Form</button>
-            <button class="btn-action" nbButton hero status="danger" (click)="deleteForm()">Delete the Form</button>
+            <button *ngIf="mode === 'Edit'" class="btn-action" nbButton hero status="danger" (click)="deleteForm()">Delete
+                the Form</button>
             <button nbButton hero status="warning" (click)="redirectToFormsManagement()">Cancel</button>
         </div>
     </div>
@@ -96,7 +97,8 @@
     <div class="col-lg-12">
         <div class="container-btn right margin">
             <button class="btn-action" nbButton hero status="primary" (click)="saveForm()">Save the Form</button>
-            <button class="btn-action" nbButton hero status="danger" (click)="deleteForm()">Delete the Form</button>
+            <button *ngIf="mode === 'edit'" class="btn-action" nbButton hero status="danger" (click)="deleteForm()">Delete
+                the Form</button>
             <button nbButton hero status="warning" (click)="redirectToFormsManagement()">Cancel</button>
         </div>
     </div>

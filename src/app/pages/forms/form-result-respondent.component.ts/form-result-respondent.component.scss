@@ -2,7 +2,7 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/breakpoints';
 @import '~@nebular/theme/styles/core/mixins';
-@import '~@nebular/bootstrap/styles/hero-buttons'; 
+@import '~@nebular/bootstrap/styles/hero-buttons';
 // modal
 :host {
     button {
@@ -10,6 +10,7 @@
         @include nb-rtl(margin, 0 0 2rem 0.75rem);
     }
 }
+
 @include nb-install-component() {
     // custom
     *:focus {
@@ -24,7 +25,17 @@
     } // respondent
     .respondent {
         cursor: pointer;
-    } // card
+    }
+    .user {
+        font-size: 100px;
+        border: 10px solid white;
+        border-radius: 100%;
+        padding: 10%;
+    }
+    .padding-right{
+        padding-right:20%;
+    }
+     // card
     .card {
         flex-direction: row;
         align-items: center;
@@ -243,6 +254,18 @@
             justify-content: flex-end;
             align-items: flex-end;
             color: nb-theme(color-fg);
+        }
+        .level1 {
+            color: nb-theme(color-fg);
+        }
+        .level2 {
+            color: nb-theme(color-success);
+        }
+        .level3 {
+            color: nb-theme(color-warning);
+        }
+        .level4 {
+            color: nb-theme(color-danger);
         }
     }
     .colors {

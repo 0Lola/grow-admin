@@ -11,43 +11,36 @@ export class FormResultRespondentComponent {
 
     formId: any;
     form: Form;
+    respondentId: any;
 
-    respondentNumber: any;
+    respondentTime: any;
     questionNumber: any;
-
-    users: { name: string, title: string }[] = [
-        { name: 'Carla Espinosa', title: 'Nurse' },
-        { name: 'Bob Kelso', title: 'Doctor of Medicine' },
-        { name: 'Janitor', title: 'Janitor' },
-        { name: 'Perry Cox', title: 'Doctor of Medicine' },
-        { name: 'Ben Sullivan', title: 'Carpenter and photographer' },
-    ];
-
-    activeModal: any;
 
     constructor(
         private router: Router,
     ) {
-        this.formId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+        this.formId = this.router.url.substr(this.router.url.indexOf('/') + 1);
+        this.respondentId = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+
     }
 
     // tslint:disable-next-line:use-life-cycle-interface
     ngOnInit(): void {
-        this.getResultFormById();
+        this.getrespondentForm();
     }
 
-    getResultFormById() {
-        // api: getResultFormById
+    getrespondentForm() {
+        // api : get Respondent Result by formId and respondentId
         this.setCard();
     }
 
     setCard() {
-        this.respondentNumber = 0;
+        this.respondentTime = 0;
         this.questionNumber = 0;
     }
 
     redirectToFormsManagement() {
-        window.location.href = `#/pages/forms/management`;
+        window.location.href = `#/pages/forms/result`;
     }
 
     showModal(respondentId) {

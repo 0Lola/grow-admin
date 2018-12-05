@@ -57,15 +57,10 @@ export class AccountSettingComponent {
         this.source.load(data);
     }
 
-    deleteUser(event) {
-        if (window.confirm('Are you sure you want to delete?')) {
-            event.confirm.resolve();
-        } else {
-            event.confirm.reject();
-        }
+    save() {
+        // api : saveAccount
     }
-    openEditUser(event) {
-        // this.router.navigateByUrl(`./edit/${event.data['id']}`);
-        window.location.href = `#/pages/account/management`;
+    cancel() {
+        history.go(-1);
     }
 }

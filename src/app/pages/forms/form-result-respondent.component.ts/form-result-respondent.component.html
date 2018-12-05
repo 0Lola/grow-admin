@@ -5,14 +5,30 @@
         </div>
     </div>
 </div>
+<!-- user information -->
+<div class="row margin">
+    <div class="col-2">
+        <div class="container-btn right margin">
+            <i class="nb-person user"></i>
+        </div>
+    </div>
+    <div class="col-10">
+        <h3>User Name</h3>
+        <h5>Job Title</h5>
+        <h6>Experience</h6>
+        <p class="padding-right">
+            Description - Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+            there
+            live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+            language ocean.
+        </p>
+    </div>
+</div>
 
 <!-- form information -->
 <div class="row">
-    <div class="col-md-12">
-        <nb-card>
-            <nb-card-header>
-                Form Result
-            </nb-card-header>
+    <div class="col-12">
+        <nb-card size="small">
             <nb-card-body>
                 <div class="font-row font-main">
                     <div class="header">
@@ -34,6 +50,32 @@
         </nb-card>
     </div>
 </div>
+
+<!-- answer -->
+<div class="row">
+    <div class="col-4" *ngFor="let answer of [1,2,3,4,1,1,2,3,4]; let i=index">
+        <nb-card>
+            <nb-card-body>
+                <div class="font-row font-main">
+                    <div class="header">
+                        <div class="name bold">Question {{i+1}} </div>
+                        <div class="variants">
+                            <span class="detail font-w-light level{{answer}}">Level {{answer}}</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        Form Description : Far far away, behind the word mountains, far from the countries Vokalia
+                        and
+                        Consonantia,
+                        there live the blind texts.
+                        Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+                        ocean.
+                    </div>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
 <!-- card -->
 <div class="row">
     <div class="col-xxxl-6 col-md-12">
@@ -44,8 +86,8 @@
                 </div>
             </div>
             <div class="details">
-                <div class="title">Respondent</div>
-                <div class="status">{{ respondentNumber }}</div>
+                <div class="title">Time</div>
+                <div class="status">{{ respondentTime }}</div>
             </div>
         </nb-card>
     </div>
@@ -64,25 +106,11 @@
     </div>
 </div>
 <div class="lists row">
-    <!-- Respondent -->
-    <div class="col-md-12 col-lg-6 col-xxxl-6">
-        <nb-card size="medium">
-            <nb-card-header>Respondent</nb-card-header>
-            <nb-list class="respondent">
-                <nb-list-item *ngFor="let user of users; let i=index" nbTooltip="view detail" nbTooltipPlacement="top"
-                    (click)="showModal(modal,i)">
-                    <nb-user [name]="user.name" [title]="user.title">
-                    </nb-user>
-                </nb-list-item>
-            </nb-list>
-        </nb-card>
-    </div>
-    <!-- rate -->
-    <div class="col-md-12 col-lg-6 col-xxxl-6">
+    <div class="col-12">
         <nb-card size="medium">
             <nb-card-body>
                 <div class="progress-info">
-                    <div class="title">Pass of Respondent</div>
+                    <div class="title">Pass of Question</div>
                     <div class="value">120</div>
                     <nb-progress-bar [value]="50"></nb-progress-bar>
                     <div class="description">

@@ -45,10 +45,10 @@ export class FormResultViewComponent {
     }
 
     redirectToFormsManagement() {
-        window.location.href = `#/pages/forms/management`;
+        history.go(-1);
     }
+
     viewRespond(respondentId) {
-        // api : get Respondent Result by formId and respondentId
         window.location.href = `#/pages/forms/respondent/${this.formId}/${respondentId}`;
 
     }
