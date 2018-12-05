@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 import { Form } from './../../entity/form/form';
 import { Question } from '../../entity/form/question';
 import swal from 'sweetalert2';
-import { calcPossibleSecurityContexts } from '@angular/compiler/src/template_parser/binding_parser';
-
 @Component({
     selector: 'ngx-form-create',
     styleUrls: ['./form-create.component.scss'],
